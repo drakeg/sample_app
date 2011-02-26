@@ -46,4 +46,15 @@ SampleApp::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Action Mailer configuration
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address		=> "smtp.drake.whsites.net",
+    :port		=> 25,
+    :user_name		=> 'drakeg',
+    :password		=> '6tfc5rdx',
+    :authentication	=> 'plain'
+  }
+  }
 end
