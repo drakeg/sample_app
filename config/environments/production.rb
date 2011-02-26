@@ -56,5 +56,4 @@ SampleApp::Application.configure do
     :password		=> '6tfc5rdx',
     :authentication	=> 'plain'
   }
-  }
 end
