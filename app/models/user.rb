@@ -15,7 +15,7 @@
 
 class User < ActiveRecord::Base
   attr_accessor   :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :username, :email, :password, :password_confirmation
   
   has_many :microposts,    :dependent => :destroy
   has_many :relationships, :dependent => :destroy,
@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
+  validates :username, :presence => true,
+		       :uniqueness => { :case_sensitive => false },
+		       :length => { :within => 6..20 }
   validates :email, :presence   => true,
                     :format     => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
