@@ -3,7 +3,11 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    @url = "http://192.168.100.35:3000"
+    if Rails.env.development?
+      @url = "http://192.168.100.35:3000"
+    else
+      @url = "http://warm-winter-654.heroku.com"
+    end
     mail(:to => user.email,
 	 :subject => "Welcome to the Sample App")
   end
