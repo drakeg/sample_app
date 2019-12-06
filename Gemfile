@@ -9,7 +9,7 @@ gem 'mail'
 group :development do
   gem 'rspec-rails', '3.9.0'
   gem 'annotate-models', '1.0.4'
-  gem 'faker', '0.3.1'
+  gem 'faker', '2.2.1'
 end
 
 group :test do
